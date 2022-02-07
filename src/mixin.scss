@@ -1,0 +1,79 @@
+$background-light: #56CCF2;
+$background-active: #2F80ED;
+$background-nth2: #f0f0f0;
+
+
+@mixin font-main ($s) {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: $s;
+  color: #fff;
+}
+
+@mixin font-table-card ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  color: #000000;
+}
+
+@mixin font-table-card-bold ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+@mixin font-table-card-title ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  line-height: 18px;
+  font-weight: 700;
+  color: #000000;
+}
+
+@mixin font-table-card-date ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  line-height: 10px;
+  font-weight: 400;
+  color: #000000;
+}
+
+@mixin font-table-card-subtitle ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  line-height: 10px;
+  font-weight: 400;
+  color: #828282;
+}
+
+@mixin font-table-card-text ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  line-height: 16.88px;
+  font-weight: 400;
+  color: #000000;
+}
+
+@mixin font-btn ($s) {
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif;
+  font-size: $s;
+  line-height: 14px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+@mixin container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@mixin grid-12 {
+  grid-template-columns: repeat(12, 1fr);
+
+  grid-column-gap: 30px;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,82 @@
+@import '../../mixin.scss';
+
+.card-container {
+  grid-column-start: 7;
+  grid-column-end: 13;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+}
+
+.card-item {
+  box-sizing: border-box;
+  max-width: 270px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+}
+
+.card-img {
+  position: relative;
+
+  img {
+    display: block;
+  }
+}
+
+.like {
+  width: 30px;
+  height: 30px;
+  background-color: $background-active;
+  border-radius: 50%;
+  @include flex-between;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -15px;
+  right: 17px;
+}
+
+.card-item-container {
+  box-sizing: border-box;
+  padding: 19px 15px 15px;
+}
+
+.title {
+  @include flex-between;
+  align-items: center;
+
+  h2 {
+    @include font-table-card-title (18px);
+  }
+
+  .date {
+    @include font-table-card-date (10px);
+  }
+}
+
+.subtitle {
+  padding-top: 6px;
+  @include font-table-card-subtitle (10px);
+}
+
+.card-item-text {
+  padding-top: 17px;
+  padding-bottom: 17px;
+  @include font-table-card-text (12px);
+}
+
+.container-btn {
+  text-align: right;
+}
+
+.read-more {
+  text-decoration: none;
+}
+
+.add-card {
+  border: none;
+  outline: none;
+  margin-top: 30px;
+}

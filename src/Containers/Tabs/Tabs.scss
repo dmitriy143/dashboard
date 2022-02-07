@@ -1,0 +1,35 @@
+@import '../../mixin.scss';
+
+.tabs {
+  background: #2D9CDB;
+}
+
+.active {
+  background: $background-active;
+  border-bottom: 8px solid #fff;
+}
+
+.tabs_item {
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  flex-basis: 100%;
+  align-self: stretch;
+  cursor: pointer;
+
+}
+
+.tabs_item:hover {
+  box-shadow: 0 0 10px #fff;
+}
+
+.tabs_item i {
+  display: block;
+  padding-bottom: 15px;
+}
+
+.tabs_item i:before {
+  font-size: 50px;
+}
