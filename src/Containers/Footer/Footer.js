@@ -3,16 +3,6 @@ import './Footer.scss';
 function Footer() {
   return (
     <footer>
-      <div className="footer-container">
-        <ul className="pages">
-          <li className="page prev"><a href="#">назад</a></li>
-          <li className="page page-number"><a href="#">1</a></li>
-          <li className="page page-number"><a href="#">2</a></li>
-          <li className="page page-number"><a href="#">3</a></li>
-          <li className="page page-number"><a href="#">...</a></li>
-          <li className="page next"><a href="#">вперед</a></li>
-        </ul>
-      </div>
       <div className="footer-v2">
         <ul className="grid-12">
           <li className="page prev sell-4"><a href="#">назад</a></li>
