@@ -1,7 +1,7 @@
 import card1 from "../../assets/img/card1.jpg";
 import card1_mobile from "../../assets/img/card1_mobile.jpg";
 import card2 from "../../assets/img/card2.jpg";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './Card.scss';
 
@@ -21,10 +21,19 @@ const cardList = [
 
 function Card() {
   const [stateCard, setStateCard] = useState(cardList)
+
+  useEffect(() => {
+    setStateCard(JSON.parse(localStorage.getItem('stateCard')));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('stateCard', JSON.stringify(stateCard));
+  }, [stateCard]);
+
   function likes(ev) {
     let x = cardList.map((item) => {
-      if (ev.target.closest('li').id === item.id) {
-        if (ev.target.closest('path').getAttribute('fill') === 'white') {
+      if (ev.target.closest('path') && ev.target.closest('li').id === item.id) {
+        if (ev.target.getAttribute('fill') === 'white') {
           item.like = true
         }
         else {

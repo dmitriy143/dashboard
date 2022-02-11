@@ -1,22 +1,23 @@
 import './Table.scss';
 
-const tableList = [{
-  id: 'list_1',
-  text: ['Position', 'some pos #1', 'some pos #2', 'some pos #3', 'some pos #4', 'some pos #5', 'some pos #6', 'some pos #7', 'some pos #8', 'some pos #9', 'some pos #10',]
-}, {
-  id: 'list_2',
-  text: ['Location', 'some pos #1', 'some pos #2', 'some pos #3', 'some pos #4', 'some pos #5', 'some pos #6', 'some pos #7', 'some pos #8', 'some pos #9', 'some pos #10',]
-}, {
-  id: 'list_3',
-  text: ['Price', 'some pos #1', 'some pos #2', 'some pos #3', 'some pos #4', 'some pos #5', 'some pos #6', 'some pos #7', 'some pos #8', 'some pos #9', 'some pos #10',]
-}]
 
-function Table() {
+function Table({ tableList }) {
   return (
     <div className="table-list">
-      {tableList.map(item => <ul key={item.id} id={item.id}>
-        {item.text.map(item => <li key={item} className="table-item">{item}</li>)}
-      </ul>)}
+      <>
+        <ul>
+          <li className="table-item">Position</li>
+          {tableList.map(item => <li key={item.id} className="table-item">{item.Position}</li>)}
+        </ul>
+        <ul>
+          <li className="table-item">Location</li>
+          {tableList.map(item => <li key={item.id} className="table-item">{item.Location}</li>)}
+        </ul>
+        <ul>
+          <li className="table-item">Price</li>
+          {tableList.map(item => <li key={item.id} className="table-item">{item.Price}</li>)}
+        </ul>
+      </>
     </div>
   )
 }
