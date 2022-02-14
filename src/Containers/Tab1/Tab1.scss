@@ -59,6 +59,10 @@
   justify-content: space-between;
 }
 
+.pagination-numbers-item:nth-child(11) {
+  display: none;
+}
+
 .arrow-container-next {
   padding-left: 20px;
 }
@@ -111,4 +115,9 @@
     color: $background-active;
     border-color: $background-active;
   }
+}
+
+.card-container {
+  grid-column-start: 7;
+  grid-column-end: 13;
 }

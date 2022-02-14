@@ -4,9 +4,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+import card1 from "./assets/img/card1.jpg";
+import imgMobile from "./assets/img/card1Mobile.jpg";
+import card2 from "./assets/img/card2.jpg";
+
+import state from "./state";
+
+
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <App state={state} />
   </BrowserRouter>,
   document.getElementById('root')
 );

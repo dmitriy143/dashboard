@@ -1,16 +1,5 @@
 @import '../../mixin.scss';
 
-.card-container {
-  grid-column-start: 7;
-  grid-column-end: 13;
-}
-
-.card-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 30px;
-}
-
 .card-item {
   box-sizing: border-box;
   max-width: 270px;

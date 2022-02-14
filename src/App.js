@@ -6,12 +6,12 @@ import Main from './Containers/Main/Main';
 import './App.scss';
 
 
-function App() {
+function App({ state }) {
   return (
     <div className="App">
       <Header />
       <Tabs />
-      <Main />
+      <Main state={state} />
       <Footer />
     </div>
   );

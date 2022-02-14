@@ -7,12 +7,12 @@ import Tab3 from '../Tab3/Tab3'
 import "./Main.scss"
 
 
-function Main() {
+function Main({ state }) {
   return (
     <div className="main">
       <div className="container-main">
         <Routes>
-          <Route path="/" element={<Tab1 />} />
+          <Route path="/" element={<Tab1 cardList={state.cardList} tableList={state.tableList} />} />
           <Route path="/tab2" element={<Tab2 />} />
           <Route path="/tab3" element={<Tab3 />} />
         </Routes>
