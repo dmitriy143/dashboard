@@ -57,15 +57,7 @@
 }
 
 .container-btn {
-  text-align: right;
-}
-
-.read-more {
-  text-decoration: none;
-}
-
-.add-card {
-  border: none;
-  outline: none;
-  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

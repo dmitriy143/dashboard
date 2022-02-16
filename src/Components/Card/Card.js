@@ -1,11 +1,10 @@
-import card1 from "../../assets/img/card1.jpg";
-import imgMobile from "../../assets/img/card1Mobile.jpg";
-import card2 from "../../assets/img/card2.jpg";
+import Btn from "./../Btn/Btn";
+
 
 import './Card.scss';
 
 
-function Card({ item, likes }) {
+function Card({ item, likes, deleteCard }) {
   return (
     <li id={item.id} className="card-item">
       <div className="card-img">
@@ -28,7 +27,11 @@ function Card({ item, likes }) {
         </div>
         <p className="subtitle">Subtitle</p>
         <p className="card-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ...</p>
-        <div className="container-btn"><a className="btn read-more" href="#">READ MORE</a>
+        <div className="container-btn">
+          <Btn type={'DELETE'} addCard={deleteCard} />
+          <a href="#">
+            <Btn type={'READ MORE'} />
+          </a>
         </div>
       </div>
     </li>

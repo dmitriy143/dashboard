@@ -1,19 +1,18 @@
 import Card from "../../Components/Card/Card";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import './Cards.scss';
 
 
-function Cards({ cardList }) {
-  const [stateCard, setStateCard] = useState(cardList)
+function Cards({ cardList, setStateCardList, deleteCard }) {
 
   useEffect(() => {
-    setStateCard(JSON.parse(localStorage.getItem('stateCard')));
+    setStateCardList(JSON.parse(localStorage.getItem('stateCard')));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('stateCard', JSON.stringify(stateCard));
-  }, [stateCard]);
+    localStorage.setItem('stateCard', JSON.stringify(cardList));
+  }, [cardList]);
 
   function likes(ev) {
     let x = cardList.map((item) => {
@@ -27,11 +26,11 @@ function Cards({ cardList }) {
       }
       return item
     })
-    setStateCard(x)
+    setStateCardList(x)
   }
   return (
     <ul className="card-list">
-      {stateCard.map(item => <Card key={item.id} item={item} likes={likes} />)}
+      {cardList.map(item => <Card key={item.id} item={item} likes={likes} deleteCard={deleteCard} />)}
     </ul>
   )
 }
