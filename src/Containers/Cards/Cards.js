@@ -1,4 +1,4 @@
-import Card from "../../Components/Card/Card";
+import Card from "../Card/Card";
 import { useEffect } from 'react';
 
 import './Cards.scss';
@@ -15,6 +15,7 @@ function Cards({ cardList, setStateCardList, deleteCard }) {
   }, [cardList]);
 
   function likes(ev) {
+    console.log(ev.target.elements)
     let x = cardList.map((item) => {
       if (ev.target.closest('path') && ev.target.closest('li').id === item.id) {
         if (ev.target.getAttribute('fill') === 'white') {

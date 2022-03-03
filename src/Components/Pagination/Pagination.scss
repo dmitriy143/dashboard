@@ -1,0 +1,78 @@
+@import '../../mixin.scss';
+
+
+.pagination {
+  padding-top: 30px;
+}
+
+.pagination-numbers-list {
+  @include flex-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-numbers-item {
+  padding-right: 15px;
+}
+
+.pagination-numbers-item:nth-last-child(2) {
+  padding-right: 0;
+}
+
+// .pagination-numbers-item:nth-child(11) {
+//   display: none;
+// }
+
+.arrow-container-next {
+  padding-left: 20px;
+}
+
+.arrow-container-prev {
+  padding-right: 22px;
+}
+
+.arrow-prev,
+.arrow-next {
+  width: 30px;
+  height: 30px;
+  background-color: $background-active;
+  border-radius: 50%;
+  @include flex-between;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: 0px 0px 8px $background-active;
+  }
+}
+
+.pagination-numbers-link {
+  width: 31px;
+  height: 30px;
+  @include flex-between;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid $background-active;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0px 0px 8px $background-active;
+  }
+}
+
+.pagination-numbers-link-active {
+  background-color: $background-active;
+}
+
+.pagination-select {
+  padding-top: 30px;
+
+  select {
+    width: 64px;
+    height: 30px;
+    @include font-table-card (14px);
+    color: $background-active;
+    border-color: $background-active;
+  }
+}

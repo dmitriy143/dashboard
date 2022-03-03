@@ -26,18 +26,70 @@ function Tab1({ cardList, tableList }) {
 
 
   function changeTable(ev) {
-    const y = [...tableList]
-    y.splice(ev.target.value)
+    const y = JSON.parse(JSON.stringify(tableList))
+    y.filter((item) => {
+      if (item.id - 1 >= ev.target.value) {
+        item.class = false
+        return item
+      }
+    })
     setStateTable(y)
   }
+
+  const howManyPaginationButton = [{
+    id: 1,
+    classActive: true
+  }]
+  function createPaginationButton() {
+    const selectValue = stateTable.filter(item => item.class === true).length
+    const count = Math.ceil(stateTable.length / selectValue)
+    for (let i = 2; i <= count; i++) {
+      howManyPaginationButton.push({
+        id: i,
+        classActive: false
+      })
+    }
+    return howManyPaginationButton
+  }
+
+  createPaginationButton()
+  console.log(howManyPaginationButton)
+
+
+
   function changePagination(ev) {
+    ev.preventDefault()
     if (ev.target.closest('.pagination-numbers-link')) {
-      const valuePagination = ev.target.closest('.pagination-numbers-link').textContent
-      const y = [...tableList]
-      y.splice(valuePagination)
+      const valuePagination = parseInt(ev.target.textContent)
+
+      howManyPaginationButton.filter(item => {
+        item.classActive = false
+        if (valuePagination === item.id) {
+          item.classActive = true
+          return item
+        }
+      })
+      console.log(howManyPaginationButton)
+
+
+      const y = JSON.parse(JSON.stringify(stateTable))
+      const allTrue = y.filter((item) => item.class === true)
+
+      const start = ((valuePagination - 1) * allTrue.length) + 1
+      const end = start + allTrue.length - 1
+
+      y.filter((item) => {
+        item.class = false
+        if (item.id >= start && item.id <= end) {
+          item.class = true
+          return item
+        }
+      })
       setStateTable(y)
     }
   }
+  console.log(howManyPaginationButton)
+
 
   function addCard() {
     let prevId = 0;
@@ -64,8 +116,8 @@ function Tab1({ cardList, tableList }) {
   return (
     <div className="container-main-grid active-tab" id="tab_1">
       <div className="table-container">
-        <Table tableList={stateTable} />
-        <Pagination tableList={tableList} changePagination={changePagination} stateTable={stateTable} changeTable={changeTable} />
+        <Table stateTable={stateTable} />
+        <Pagination howManyPaginationButton={howManyPaginationButton} tableList={tableList} changePagination={changePagination} stateTable={stateTable} changeTable={changeTable} />
       </div>
       <div className="card-container">
         <Cards cardList={stateCardList} setStateCardList={setStateCardList} deleteCard={deleteCard} />

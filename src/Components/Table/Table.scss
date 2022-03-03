@@ -1,0 +1,40 @@
+@import '../../mixin.scss';
+
+.table-list {
+  @include flex-between;
+  box-sizing: border-box;
+  width: 100%;
+
+
+  ul {
+    flex-grow: 1;
+    border: 1px solid $background-active;
+    border-right: none;
+
+    li:nth-child(2n+1):not(li:first-child) {
+      background-color: $background-nth2;
+    }
+  }
+
+  ul:last-child {
+    border-right: 1px solid $background-active;
+  }
+
+}
+
+.table-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.table-item:first-child {
+  background-color: $background-active;
+  @include font-table-card-bold (14px);
+}
+
+.notActive {
+  display: none;
+}

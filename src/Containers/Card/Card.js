@@ -1,5 +1,4 @@
-import Btn from "./../Btn/Btn";
-
+import Btn from "../../Components/Btn/Btn";
 
 import './Card.scss';
 
